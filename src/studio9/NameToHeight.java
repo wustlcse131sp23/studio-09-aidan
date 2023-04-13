@@ -1,6 +1,7 @@
 package studio9;
 
 import java.util.HashMap;
+
 import java.util.Map;
 import java.util.Scanner;
 
@@ -19,9 +20,27 @@ public class NameToHeight {
 	 */
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-
+		Map<String, Integer> mapName = new HashMap <String, Integer>();
 		// FIXME
-		throw new NotYetImplementedException();
-
+		mapName.put("Aidan", 72);
+		
+		while (true) {
+		String name = in.next();
+		if (name.equals("quit")) {
+			break;
+			
+		}
+		
+		
+		Integer map = mapName.get(name);
+		if (map==null) {
+			
+			System.out.println("The name cannot be found");
+		}
+		else {
+			System.out.println(map + " " + name);
+		}
+		}
+		
 	}
 }
