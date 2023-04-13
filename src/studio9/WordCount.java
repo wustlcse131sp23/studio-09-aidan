@@ -1,6 +1,7 @@
 package studio9;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -28,9 +29,23 @@ public class WordCount {
 	 *         associated with the number of occurrences of the word
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
-
-		// FIXME
-		throw new NotYetImplementedException();
+	
+		Map<String, Integer> mapName = new HashMap <String, Integer>();
+		for (int i=0;i<words.size();i++) {
+			
+			String word = words.get(i);
+			Integer map = mapName.get(word);
+			if (map==null) {
+				mapName.put(word, 1);
+				
+			}
+			else { 
+				mapName.put(word, 1+map);
+			}
+			
+		}
+	
+	return mapName;
 
 	}
 }
